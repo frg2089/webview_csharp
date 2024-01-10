@@ -14,22 +14,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\..\libs\webview.dll">
+    <Content Include="..\..\libs\webview.dll" Pack="True" CopyToOutputDirectory="PreserveNewest">
+      <Link>runtimes\win-x64\native\webview.dll</Link>
       <PackagePath>runtimes\win-x64\native\webview.dll</PackagePath>
-      <Pack>true</Pack>
     </Content>
-    <Content Include="..\..\libs\WebView2Loader.dll">
-      <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
-      <Pack>true</Pack>
+    <Content Include="..\..\libs\webview-x86.dll" Pack="True" CopyToOutputDirectory="PreserveNewest">
+      <Link>runtimes\win-x86\native\webview.dll</Link>
+      <PackagePath>runtimes\win-x86\native\webview.dll</PackagePath>
     </Content>
-    <Content Include="..\..\libs\libwebview.dylib">
+    <Content Include="..\..\libs\libwebview.dylib" Pack="True" CopyToOutputDirectory="PreserveNewest">
+      <Link>runtimes\osx-x64\native\libwebview.dylib</Link>
       <PackagePath>runtimes\osx-x64\native\libwebview.dylib</PackagePath>
-      <Pack>true</Pack>
     </Content>
-    <Content Include="..\..\libs\libwebview.so">
+    <Content Include="..\..\libs\libwebview.so" Pack="True" CopyToOutputDirectory="PreserveNewest">
+      <Link>runtimes\linux-x64\native\libwebview.so</Link>
       <PackagePath>runtimes\linux-x64\native\libwebview.so</PackagePath>
-      <Pack>true</Pack>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2210.55" />
   </ItemGroup>
 
 </Project>
